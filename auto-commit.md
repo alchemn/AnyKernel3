@@ -1,7 +1,7 @@
 # Auto Commit Log
 
-Last updated (backfilled): 2025-08-19T11:27:15.000Z
+Last updated (backfilled): 2025-08-20T11:42:21.000Z
 
-docs: update changelog
+build: tweak configuration
 
 Keep the streak alive! 🔥
