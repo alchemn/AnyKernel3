@@ -4,7 +4,7 @@
 ### AnyKernel setup
 # global properties
 properties() { '
-kernel.string=Poseidon
+kernel.string=Zombie
 do.devicecheck=1
 device.name1=moonstone
 device.name2=sunstone
