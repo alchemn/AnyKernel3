@@ -1,18 +1,3 @@
-### AnyKernel3 Ramdisk Mod Script
-## osm0sis @ xda-developers
-
-### AnyKernel setup
-# global properties
-properties() { '
-kernel.string=Zombie
-do.devicecheck=1
-device.name1=moonstone
-device.name2=sunstone
-device.name3=gemstone
-device.name4=stone
-do.cleanup=1
-'; } # end properties
-
 ### AnyKernel install
 # boot shell variables
 block=boot;
@@ -23,6 +8,19 @@ no_block_display=1;
 . tools/ak3-core.sh;
 
 # boot install
+ui_print "- Rhodok Boot.img";
 split_boot;
 flash_boot;
+ui_print "- boot.img sukses di rodhok!";
+
+#dtbo Install
+ui_print "- Rhodok Dtbo.img";
+dtbo_block=$(find /dev/block/bootdevice/by-name/ -iname "dtbo*" | head -n 1);
+if [ -n "$dtbo_block" ]; then
+    dd if="$ZIPFILE/../dtbo.img" of="$dtbo_block" bs=4096;
+    ui_print "- dtbo.img sukses di rodhok";
+else
+    ui_print "! dtbo partition not found, skipping...";
+fi
+
 ## end boot install
